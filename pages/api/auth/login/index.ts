@@ -20,7 +20,6 @@ const loginService = async (req: NextApiRequest, res: NextApiResponse) => {
           users,
           ({ email }: ServerUser) => email === parsedBody?.email
         )
-        await randomDelay()
         if (user) {
           if (user?.password === parsedBody?.password) {
             const { password, ...rest } = user

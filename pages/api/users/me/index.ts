@@ -16,7 +16,6 @@ const meService = async (req: NextApiRequest, res: NextApiResponse) => {
     switch (method) {
       case 'GET':
         res.setHeader('Content-Type', 'application/json')
-        await randomDelay()
         const { authorization } = headers
         if (authorization) {
           const { id: userId }: any = jwt_decode(authorization as string)
