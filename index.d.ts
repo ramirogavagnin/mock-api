@@ -7,28 +7,17 @@ type Json =
   | { [property: string]: Json }
   | Json[]
 
-type TProductId = string
-
-type TProductAttributes = {
-  description: string
-  shape: string
-  hardiness: string
-  taste: string
-}
-
-type TProduct = {
-  id: TProductId
+interface ClientUser {
+  id: string
+  avatar: string
+  age: number
+  email: string
   name: string
-  sku: string
-  price: number
-  image: Url
-  attributes: TProductAttributes
+  role: 'admin' | 'user'
+  surname: string
+  token: string
 }
 
-type TAPIAVODetailResponse = TProduct
-
-type TAPIAvoResponse = {
-  lenght: number
-  data: TProduct[]
-  error?: string
+interface ServerUser extends ClientUser {
+  password: string
 }

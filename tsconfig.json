@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@database": ["database/db.ts"],
+      "@database": ["database/index.ts"],
       "@cors": ["cors-middleware.ts"],
       "@components/*": ["components/*"],
       "@store/*": ["store/*"]
