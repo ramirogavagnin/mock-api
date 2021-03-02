@@ -4,7 +4,7 @@ const users: ServerUser[] = [
     avatar:
       'https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png',
     email: 'it@drixit.com',
-    password: 'User1234',
+    password: 'Password1234',
     name: 'IT',
     surname: 'Drixit',
     age: 25,
@@ -17,7 +17,7 @@ const users: ServerUser[] = [
     avatar:
       'https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png',
     email: 'info@drixit.com',
-    password: 'Admin1234',
+    password: 'Password1234',
     name: 'Info',
     surname: 'Drixit',
     age: 30,
