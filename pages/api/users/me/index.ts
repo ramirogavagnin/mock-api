@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { find } from 'lodash'
 import jwt_decode from 'jwt-decode'
 
-import { users, randomDelay } from '@database'
+import { users } from '@database'
 import enablePublicAccess from '@cors'
 
 const meService = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -32,14 +32,7 @@ const meService = async (req: NextApiRequest, res: NextApiResponse) => {
         res.status(405).end(`Method ${method} Not Allowed`)
     }
   } catch (e) {
-    res.status(500).end(
-      JSON.stringify({
-        length: 0,
-        data: [],
-        error: 'Something went wrong',
-        message: 'serverError',
-      })
-    )
+    return res.status(500).json({ error: 'serverError' })
   }
 }
 

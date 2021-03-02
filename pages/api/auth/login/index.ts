@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { find } from 'lodash'
+import { find, isString } from 'lodash'
 
 import enablePublicAccess from '@cors'
-import { users, randomDelay } from '@database'
+import { users } from '@database'
 
 const loginService = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -12,35 +12,27 @@ const loginService = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const { method, body } = req
 
-    switch (method) {
-      case 'POST':
-        res.setHeader('Content-Type', 'application/json')
-        const parsedBody = JSON.parse(body)
-        const user = find(
-          users,
-          ({ email }: ServerUser) => email === parsedBody?.email
-        )
-        if (user) {
-          if (user?.password === parsedBody?.password) {
-            const { password, ...rest } = user
-            return res.status(200).json(rest)
-          }
-          return res.status(404).json({ message: 'invalidPassword' })
+    if (method === 'POST') {
+      res.setHeader('Content-Type', 'application/json')
+      const parsedBody = isString(body) ? JSON.parse(body) : body
+      const user = find(
+        users,
+        ({ email }: ServerUser) => email === parsedBody?.email
+      )
+      if (user) {
+        if (user?.password === parsedBody?.password) {
+          const { password, ...rest } = user
+          return res.status(200).json(rest)
         }
-        return res.status(404).json({ message: 'userNotFound' })
-      default:
-        res.setHeader('Allow', ['POST'])
-        res.status(405).end(`Method ${method} Not Allowed`)
+        return res.status(404).json({ error: 'invalidPassword' })
+      }
+      return res.status(404).json({ error: 'userNotFound' })
+    } else {
+      res.setHeader('Allow', ['POST'])
+      res.status(405).end(`Method ${method} Not Allowed`)
     }
   } catch (e) {
-    res.status(500).end(
-      JSON.stringify({
-        length: 0,
-        data: [],
-        error: 'Something went wrong',
-        message: 'serverError',
-      })
-    )
+    return res.status(500).json({ error: 'serverError' })
   }
 }
 

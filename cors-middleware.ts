@@ -12,7 +12,7 @@ import { RequestHandler } from 'express'
  * @see https://github.com/expressjs/cors#configuration-options
  */
 const CORS_OPTIONS = {
-  methods: ['GET', 'OPTIONS'],
+  methods: ['GET', 'POST', 'OPTIONS'],
 }
 
 function promisifyMiddleware(middleware: RequestHandler) {
