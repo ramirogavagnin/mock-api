@@ -2,12 +2,12 @@ const users: ServerUser[] = [
   {
     id: 'it-drixit-1',
     avatar:
-      'https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png',
-    email: 'it@drixit.com',
+      'https://i.pinimg.com/originals/ac/51/52/ac5152b9f7f50781b2b01e35463fc4e6.jpg',
+    email: 'rick@sanchez.com',
     password: 'Password1234',
-    name: 'IT',
-    surname: 'Drixit',
-    age: 25,
+    name: 'Rick',
+    surname: 'Sanchez',
+    age: 45,
     role: 'admin',
     token:
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Iml0LWRyaXhpdC0xIn0.rx1pmEStroglSb5eM12pYQmvpIxeSa5XQ23ZFj-P074',
@@ -15,12 +15,12 @@ const users: ServerUser[] = [
   {
     id: 'info-drixit-2',
     avatar:
-      'https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png',
-    email: 'info@drixit.com',
+      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fnordic.ign.com%2Frick-morty%2F36594%2Fvideo%2Fis-rick-and-morty-season-4-trying-to-distract-us-from-evil-mortys-plan&psig=AOvVaw3E5_sh9iajRS_VHXpIg-_x&ust=1614815137953000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIiyn63lku8CFQAAAAAdAAAAABAE',
+    email: 'morty@smith.com',
     password: 'Password1234',
-    name: 'Info',
-    surname: 'Drixit',
-    age: 30,
+    name: 'Morty',
+    surname: 'Smith',
+    age: 14,
     role: 'user',
     token:
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImluZm8tZHJpeGl0LTIifQ.857deM9UdFkHQjIRpmLxMyQSL6XIe4HSa7xDbRWLJic',
