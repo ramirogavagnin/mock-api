@@ -14,8 +14,7 @@ const users: ServerUser[] = [
   },
   {
     id: 'info-drixit-2',
-    avatar:
-      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fnordic.ign.com%2Frick-morty%2F36594%2Fvideo%2Fis-rick-and-morty-season-4-trying-to-distract-us-from-evil-mortys-plan&psig=AOvVaw3E5_sh9iajRS_VHXpIg-_x&ust=1614815137953000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIiyn63lku8CFQAAAAAdAAAAABAE',
+    avatar: 'https://i.ytimg.com/vi/_-fCLEXOjSk/maxresdefault.jpg',
     email: 'morty@smith.com',
     password: 'Password1234',
     name: 'Morty',
